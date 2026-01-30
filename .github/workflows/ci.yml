@@ -1,2 +1,16 @@
-runs-on: self-hosted
+name: CI
 
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run a test command
+        run: echo "Runner is working!"
